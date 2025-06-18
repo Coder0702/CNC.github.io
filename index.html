@@ -1,95 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CNC Workshop @ ACM CoNEXT 2025</title>
-
-  <!-- Tailwind CSS (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome (CDN) -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    rel="stylesheet"
-  />
-
-  <!-- Optional: Base tag to support relative paths -->
-  <base href="https://coder0702.github.io/CNC.github.io/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACM CoNEXT-2025 Workshop on Computing and Network Convergence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header-image {
+            width: 100%;
+            height: 200px;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #003366;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .dates-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .dates-table th, .dates-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .dates-table th {
+            background-color: #f2f2f2;
+        }
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #e8f5e9; /* Light green background */
+        }
+        .program-table th, .program-table td {
+            border: 1px solid #a5d6a7;
+            padding: 12px;
+            text-align: left;
+        }
+        .program-table th {
+            background-color: #c8e6c9; /* Slightly darker green for headers */
+            color: #2e7d32;
+        }
+        .program-table tr:nth-child(even) {
+            background-color: #f1f8e9; /* Alternate row color */
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
-  <header class="bg-blue-800 text-white shadow">
-    <div class="container mx-auto px-4 py-6">
-      <h1 class="text-3xl font-bold">CNC Workshop @ ACM CoNEXT 2025</h1>
-      <p class="text-lg">Call for Papers</p>
+<body>
+    <header>
+        <div class="container">
+            <h1>ACM CoNEXT-2025 Workshop on Computing and Network Convergence</h1>
+            <p>HKUST, HongKong | December 1, 2025</p>
+        </div>
+    </header>
+    
+    <div class="header-image"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('cfp')">Call for Papers</a>
+            <a href="#" onclick="showPage('organizers')">Organizers</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h2>Overview</h2>
+            <p>Computing and Network Convergence (CNC) has become a popular topic in the information and communication technology industry in recent years. It aims to achieve convenient and efficient access to computing power by jointly optimizing and scheduling computing and network resources. The implementation of joint optimization and scheduling requires a brand new architecture design, which can provide ubiquitous and guaranteed service level agreements (SLA) in terms of connectivity and computing resource supply.</p>
+            
+            <p>With the development of AI technology, the demand for collaborative utilization of various resources, such as computing and storage, is becoming increasingly urgent. CNC can efficiently coordinate various resources, providing guarantees for AI training and inference businesses in terms of network transmission, computing power scheduling and load balancing, maximizing resource utilization while minimizing energy consumption.</p>
+            
+            <p>This workshop will cover theories, technologies and applications related to CNC, including but not limited to architectures, protocols, platforms, techniques and services. The main research includes CNC scheduling and orchestration, computing and network resource identification, addressing, perception, measurement, and in-network computing. It covers both fixed and cellular wireless networks.</p>
+            
+            <h2>Workshop Program</h2>
+            <table class="program-table">
+                <tr>
+                    <th>Time</th>
+                    <th>Session</th>
+                    <th>Speaker</th>
+                </tr>
+                <tr>
+                    <td>09:00 - 09:30</td>
+                    <td>Registration</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>09:30 - 10:00</td>
+                    <td>Opening Keynote</td>
+                    <td>Tao Sun, China Mobile</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td>Technical Session I: Architecture</td>
+                    <td>Multiple Speakers</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 11:30</td>
+                    <td>Coffee Break</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>11:30 - 12:30</td>
+                    <td>Technical Session II: AI Applications</td>
+                    <td>Multiple Speakers</td>
+                </tr>
+                <tr>
+                    <td>12:30 - 14:00</td>
+                    <td>Lunch</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 15:30</td>
+                    <td>Panel Discussion</td>
+                    <td>All Chairs</td>
+                </tr>
+                <tr>
+                    <td>15:30 - 16:00</td>
+                    <td>Closing Remarks</td>
+                    <td>Tian Pan, BUPT</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Call for Papers Page -->
+        <div id="cfp" class="page">
+            <h2>Call for Papers</h2>
+            <p>The deep convergence of computing and network resources has become a key engine driving the development of future technologies, such as artificial intelligence, big data, and cloud computing. To explore the cutting-edge technologies, innovative applications, and future trends in the field of computing and network convergence (CNC), we sincerely invite you to attend CNC workshop. We are also soliciting high-quality papers and practical cases globally.</p>
+            
+            <h3>Topics of Interest</h3>
+            <p>Topics of interest include (but not limited to):</p>
+            <ul>
+                <li>5G-A/6G network integrated with computing service</li>
+                <li>AI Training and Inference Network</li>
+                <li>Computing aware network routing</li>
+                <li>Computing/cloud and network convergence architecture</li>
+                <li>Coordination scheduling of cloud, network, edge, and terminal</li>
+                <li>Computing and network resource identification and addressing</li>
+                <li>Digital twin network for CNC</li>
+                <li>Energy optimization and green low-carbon technologies of CNC</li>
+                <li>Integrated sensing, communication and computing</li>
+                <li>In-network computing</li>
+                <li>Measurement of computing resources and green computing</li>
+                <li>Performance evaluation and testing technology for CNC</li>
+                <li>Security and privacy protection for computing/cloud and network convergence</li>
+                <li>Service, computing and network resource awareness</li>
+                <li>Transaction and incentive mechanism of computing resources</li>
+            </ul>
+            
+            <h3>Submission Instructions</h3>
+            <p>Submissions must be original, unpublished work, and not under consideration at another conference or journal. Submitted papers must be at most six (6) pages long, excluding references and appendices, in two-column 10pt ACM format. All submissions will undergo a strict double-blind peer review process. Authors of accepted submissions are expected to present and discuss their work at the workshop.</p>
+            <p>Please Submit your paper via XXXXXXXXXXXXXXXXXXXXXXX</p>
+            
+            <h3>Important Dates</h3>
+            <table class="dates-table">
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Paper submissions deadline</td>
+                    <td>July 15th, 2025</td>
+                </tr>
+                <tr>
+                    <td>Paper acceptance notification</td>
+                    <td>Before end of August, 2025</td>
+                </tr>
+                <tr>
+                    <td>Camera ready due</td>
+                    <td>Before end of September, 2025</td>
+                </tr>
+                <tr>
+                    <td>Program available online</td>
+                    <td>Before mid-October, 2025</td>
+                </tr>
+                <tr>
+                    <td>List of organization details</td>
+                    <td>Before mid-October, 2025</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Organizers Page -->
+        <div id="organizers" class="page">
+            <h2>WorkShop Chairs</h2>
+            <ul>
+                <li>Tao Sun, China Mobile</li>
+                <li>Tian Pan, Beijing University of Posts and Telecommunications</li>
+                <li>Tsang Yolanda, ASTRI</li>
+            </ul>
+            
+            <h2>Technical Program Committee</h2>
+            <ul>
+                <li>Moustafa, Hassnaa, Intel</li>
+                <li>Deyun Gao, Beijing Jiaotong University</li>
+                <li>Ran Pang, China Unicom</li>
+                <li>Alex Hsu, MTK</li>
+                <li>Peirui Cao, Nanjing University</li>
+                <li>Han Lei, Nanjing University of Posts and Telecommunications</li>
+                <li>Ruifeng Li, China Mobile</li>
+                <li>Junchen Jiang, University of Chicago</li>
+                <li>Weifei Wu, Peking University</li>
+                <li>Haoyu Song, Futurewei Technologies</li>
+                <li>Yang Xu, Fudan University</li>
+                <li>Tong Yang, Peking University</li>
+                <li>Changgang Zheng, University of Oxford</li>
+                <li>Lin He, Tsinghua University</li>
+                <li>Yang Song, Alibaba Cloud</li>
+                <li>Keqiang He, Shanghai Jiaotong University</li>
+                <li>Hao Li, Xi'an Jiaotong University</li>
+                <li>Fuliang Li, Northwestern University</li>
+            </ul>
+        </div>
     </div>
-  </header>
-
-  <nav class="bg-blue-700 text-white py-2">
-    <div class="container mx-auto px-4 flex space-x-4">
-      <a href="#overview" class="hover:underline">Overview</a>
-      <a href="#topics" class="hover:underline">Topics</a>
-      <a href="#dates" class="hover:underline">Important Dates</a>
-      <a href="#submission" class="hover:underline">Submission</a>
-      <a href="#committee" class="hover:underline">Committee</a>
-    </div>
-  </nav>
-
-  <main class="container mx-auto px-4 py-10 space-y-16">
-    <section id="overview">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Overview</h2>
-      <p>
-        The 3rd Workshop on Control for Networked Computing Systems (CNC) aims
-        to bring together researchers and practitioners working at the
-        intersection of control theory, computer systems, and networking.
-      </p>
-    </section>
-
-    <section id="topics">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Topics of Interest</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Control-based resource management in cloud computing</li>
-        <li>Feedback control in computer networks</li>
-        <li>Learning and control for distributed systems</li>
-        <li>Autonomous and self-adaptive systems</li>
-        <li>Control for edge and real-time systems</li>
-      </ul>
-    </section>
-
-    <section id="dates">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Important Dates</h2>
-      <ul class="space-y-2">
-        <li><strong>Submission Deadline:</strong> August 15, 2025</li>
-        <li><strong>Notification:</strong> September 20, 2025</li>
-        <li><strong>Camera-ready:</strong> October 10, 2025</li>
-        <li><strong>Workshop Date:</strong> December 8, 2025</li>
-      </ul>
-    </section>
-
-    <section id="submission">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Submission Guidelines</h2>
-      <p>
-        Submissions must be original and not under review elsewhere. Papers
-        should follow the ACM CoNEXT formatting and be up to 6 pages including
-        references. Submit via HotCRP at:
-        <a href="https://cnc2025.hotcrp.com" target="_blank" class="text-blue-600 underline">
-          https://cnc2025.hotcrp.com
-        </a>
-      </p>
-    </section>
-
-    <section id="committee">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Organizing Committee</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Jane Doe (University A)</li>
-        <li>John Smith (Institute B)</li>
-        <li>Alice Chen (Lab C)</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="bg-blue-800 text-white text-center py-6">
-    <p>&copy; 2025 CNC Workshop. All rights reserved.</p>
-  </footer>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ACM CoNEXT-2025 Workshop on Computing and Network Convergence</p>
+        </div>
+    </footer>
+    
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Prevent default anchor behavior
+            return false;
+        }
+    </script>
 </body>
 </html>
