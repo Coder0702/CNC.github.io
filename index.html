@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACM CoNEXT-2025 Workshop on Computing and Network Convergence</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* 全局样式 */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -13,20 +15,22 @@
             line-height: 1.6;
             color: #333;
         }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* 头部样式调整 */
+
+        /* 头部样式 */
         .header-container {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
         }
-        
+
         .header-bg {
             position: absolute;
             width: 100%;
@@ -36,7 +40,7 @@
             background-position: center;
             z-index: 1;
         }
-        
+
         .header-overlay {
             position: absolute;
             width: 100%;
@@ -44,7 +48,7 @@
             background: rgba(0, 0, 0, 0.3);
             z-index: 2;
         }
-        
+
         .header-content {
             position: absolute;
             width: 100%;
@@ -56,7 +60,7 @@
             padding: 40px;
             box-sizing: border-box;
         }
-        
+
         .title-box {
             background: rgba(0, 0, 0, 0.5);
             padding: 40px 20px;
@@ -66,133 +70,206 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .title-line1 {
             font-family: 'Noto Sans SC', sans-serif;
             font-weight: 900;
-            font-size: 32px;
+            font-size: clamp(24px, 4vw, 32px);
             color: white;
             margin: 0;
         }
-        
+
         .title-line2 {
             font-family: 'Noto Sans SC', sans-serif;
             font-weight: 900;
-            font-size: 48px;
+            font-size: clamp(36px, 6vw, 48px);
             color: white;
             margin: 15px 0;
         }
-        
+
         .title-line3 {
             font-family: 'Segoe UI', sans-serif;
             font-weight: 300;
             font-style: italic;
-            font-size: 28px;
+            font-size: clamp(20px, 3vw, 28px);
             color: white;
             margin: 0;
         }
-        
-        /* 导航栏样式调整 - 高度缩小 */
+
+        /* 导航栏样式 */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            background-color: rgba(0, 51, 102, 1);
+            padding: 10px 5%;
+            box-sizing: border-box;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(0, 51, 102, 1);
-            padding: 10px 10%; /* 减小上下内边距 */
-            box-sizing: border-box;
-            z-index: 1000;
-            height: 60px; /* 固定高度 */
+            height: 60px;
         }
-        
+
         .logo {
             font-family: 'Noto Sans SC', sans-serif;
             font-weight: 900;
-            font-size: 36px;
+            font-size: 28px;
             color: white;
             text-decoration: none;
-            line-height: 40px; /* 确保垂直居中 */
         }
-        
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
         .nav-links {
             display: flex;
-            align-items: center;
-            height: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
         .nav-links a {
             color: white;
             text-decoration: none;
-            padding: 8px 20px; /* 调整内边距 */
-            margin: 0 5px;
             font-family: 'Segoe UI', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.3s ease;
-            line-height: 24px; /* 确保垂直居中 */
         }
-        
+
         .nav-links a:hover {
-            background-color: #0056b3;
-            border-radius: 5px;
+            color: #c8e6c9;
         }
-        
+
+        /* 移动端导航样式 */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 51, 102, 0.95);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-open .nav-links {
+                display: flex;
+            }
+
+            .nav-open .nav-toggle span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .nav-open .nav-toggle span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-open .nav-toggle span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
         /* 主体内容样式 */
         main {
-            margin-top: 0;
+            margin-top: 60px; /* 避免内容被固定导航栏遮挡 */
             padding-top: 30px;
         }
-        
+
         /* 内容区域样式 */
         .content-section {
-            padding: 60px 0;
-            min-height: 100vh;
+            padding: 80px 0;
+            margin-bottom: 40px;
         }
-        
-        h1, h2 {
+
+        .content-section h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
             color: #0056b3;
         }
-        
-        .dates-table {
-            width: 100%;
-            border-collapse: collapse;
+
+        .content-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .content-section ul,
+        .content-section ol {
             margin: 20px 0;
+            padding-left: 30px;
         }
-        
-        .dates-table th, .dates-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
-        
-        .dates-table th {
-            background-color: #f2f2f2;
-        }
-        
+
+        /* 表格样式 */
+        .dates-table,
         .program-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #e8f5e9;
+            margin: 30px 0;
         }
-        
-        .program-table th, .program-table td {
-            border: 1px solid #a5d6a7;
+
+        .dates-table th,
+        .dates-table td,
+        .program-table th,
+        .program-table td {
+            border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
         }
-        
+
+        .dates-table th,
+        .program-table th {
+            background-color: #f2f2f2;
+        }
+
+        .program-table {
+            background-color: #e8f5e9;
+        }
+
         .program-table th {
             background-color: #c8e6c9;
             color: #2e7d32;
         }
-        
+
         .program-table tr:nth-child(even) {
             background-color: #f1f8e9;
         }
-        
+
+        /* 页脚样式 */
         footer {
             background-color: #003366;
             color: white;
@@ -200,62 +277,25 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-
-        /* 新增：统一内容区域样式 */
-        .content-section {
-            padding: 80px 0;
-            min-height: auto; /* 移除固定高度 */
-            margin-bottom: 40px;
-        }
-        
-        .content-section h2 {
-            margin-bottom: 30px;
-            font-size: 32px;
-        }
-        
-        .content-section p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .content-section ul, 
-        .content-section ol {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-        
-        .content-section li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        /* 表格间距调整 */
-        .content-section table {
-            margin: 30px 0;
-        }
-        
-        /* 首页Overview部分特殊调整 */
-        #home {
-            padding-top: 100px; /* 首部分顶部多留些空间 */
-        }
-        
-        /* 最后一个内容区域减少底部间距 */
-        #organizers {
-            margin-bottom: 20px;
-        }
     </style>
 </head>
+
 <body>
     <!-- 导航栏 -->
-    <nav>
+    <nav id="main-nav">
         <a href="#" class="logo">CNC</a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#cfp">Call for Papers</a>
-            <a href="#organizers">Organizers</a>
-        </div>
+        <button class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cfp">Call for Papers</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+        </ul>
     </nav>
-    
+
     <!-- 头部区域 -->
     <header class="header-container">
         <div class="header-bg"></div>
@@ -268,7 +308,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- 主体内容 -->
     <main>
         <div class="container">
@@ -283,20 +323,20 @@
                         <td>Breakfast</td>
                     </tr>
                     <tr>
-                      <td>09:00 AM</td>
-                      <td>Keynotes Presentation</td>
+                        <td>09:00 AM</td>
+                        <td>Keynotes Presentation</td>
                     </tr>
                     <tr>
-                      <td></td>
-                      <td>
-                        Keynote1: Zhang Yujun (Institute of Computing Technology, Chinese Academy of Sciences,CN)<br>
-                          <strong>Computing and Network Convergence: The Backbone of Next-Generation Digital Infrastructure</strong>
-                      </td>
+                        <td></td>
+                        <td>
+                            Keynote1: Zhang Yujun (Institute of Computing Technology, Chinese Academy of Sciences,CN)<br>
+                            <strong>Computing and Network Convergence: The Backbone of Next-Generation Digital Infrastructure</strong>
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>Keynote2: Wu Shaoyun (Huawei, CN)<br>
-                          <strong>Paradigm Shift and Industrial Opportunities of Computing and Network Convergence</strong>
+                            <strong>Paradigm Shift and Industrial Opportunities of Computing and Network Convergence</strong>
                         </td>
                     </tr>
                     <tr>
@@ -313,12 +353,12 @@
                     </tr>
                 </table>
             </section>
-            
+
             <!-- Call for Papers Section -->
             <section id="cfp" class="content-section">
                 <h2>Call for Papers</h2>
                 <p>The deep convergence of computing and network resources has become a key engine driving the development of future technologies, such as artificial intelligence, big data, and cloud computing. To explore the cutting-edge technologies, innovative applications, and future trends in the field of computing and network convergence (CNC), we sincerely invite you to attend CNC workshop. We are also soliciting high-quality papers and practical cases globally.</p>
-                
+
                 <h2>Topics of Interest</h2>
                 <ul>
                     <li>5G-A/6G network integrated with computing service</li>
@@ -337,15 +377,15 @@
                     <li>Service, computing and network resource awareness</li>
                     <li>Transaction and incentive mechanism of computing resources</li>
                 </ul>
-                
+
                 <h2>Submission Instructions</h2>
                 <p>Submissions must be original, unpublished work, and not under consideration at another conference or journal. Submitted papers must be at most six (6) pages long, excluding references and appendices, in two-column 10pt ACM format. All submissions will undergo a strict double-blind peer review process. Authors of accepted submissions are expected to present and discuss their work at the workshop.</p>
-                <p>Please Submit your paper via 
+                <p>Please Submit your paper via
                     <a href="https://conext25cnc.hotcrp.com/" target="_blank" rel="noopener noreferrer">
                         https://conext25cnc.hotcrp.com/
                     </a>
                 </p>
-                
+
                 <h2>Important Dates</h2>
                 <table class="dates-table">
                     <tr>
@@ -374,7 +414,7 @@
                     </tr>
                 </table>
             </section>
-            
+
             <!-- Organizers Section -->
             <section id="organizers" class="content-section">
                 <h2>WorkShop Chairs</h2>
@@ -383,7 +423,7 @@
                     <li>Tian Pan, Beijing University of Posts and Telecommunications</li>
                     <li>Tsang Yolanda, ASTRI</li>
                 </ul>
-                
+
                 <h2>Technical Program Committee</h2>
                 <ul>
                     <li>Moustafa, Hassnaa, Intel</li>
@@ -408,22 +448,34 @@
             </section>
         </div>
     </main>
-    
+
     <footer>
         <div class="container">
             <p>&copy; 2025 ACM CoNEXT-2025 Workshop on Computing and Network Convergence</p>
         </div>
     </footer>
-    
+
     <script>
+        // 导航栏切换
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const mainNav = document.getElementById('main-nav');
+
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('nav-open');
+        });
+
         // 平滑滚动到锚点
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
+                // 关闭导航菜单
+                mainNav.classList.remove('nav-open');
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 60, // 减去导航栏高度
@@ -432,6 +484,16 @@
                 }
             });
         });
+
+        // 监听滚动事件，改变导航栏样式
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
+
 </html>
