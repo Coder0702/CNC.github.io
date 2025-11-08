@@ -269,6 +269,16 @@
             background-color: #f1f8e9;
         }
 
+        /* 地图图片样式 */
+        .map-image {
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 20px auto; /* 居中和上下边距 */
+            border: 1px solid #ddd; /* 可选：添加边框 */
+            border-radius: 5px; /* 可选：圆角 */
+        }
+
         /* 页脚样式 */
         footer {
             background-color: #003366;
@@ -317,41 +327,71 @@
                 <p>Computing and Network Convergence (CNC) has become a populart topic in the information and communication technology industry in recent years. It aims to achieve convenient and efficient access to computing power by jointly optimizing and scheduling computing and network resources. The implementation of joint optimization and scheduling requires a brand new architecture design, which can provide ubiquitous and guaranteed service level agreements (SLA) in terms of connectivity and computing resource supply. With the development of AI technology, the demand for collaborative utilization of various resources, such as computing and storage, is becoming increasingly urgent. CNC can efficiently coordinate various resources, providing guarantees for AI training and inference businesses in terms of network transmission, computing power scheduling and load balancing, maximizing resource utilization while minimizing energy consumption.</p>
                 <p>This workshop will cover theories, technologies and applications related to CNC, including but not limited to architectures, protocols, platforms, techniques and services. The main research includes CNC scheduling and orchestration, computing and network resource identification, addressing, perception, measurement, and in-network computing. It covers both fixed and cellular wireless networks.</p>
                 <h2>Workshop Program</h2>
-                <table class="program-table">
-                    <tr>
-                        <td>08:00 AM</td>
-                        <td>Breakfast</td>
-                    </tr>
-                    <tr>
-                        <td>09:00 AM</td>
-                        <td>Keynotes Presentation</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            Keynote1: Zhang Yujun (Institute of Computing Technology, Chinese Academy of Sciences,CN)<br>
-                            <strong>Computing and Network Convergence: The Backbone of Next-Generation Digital Infrastructure</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Keynote2: Wu Shaoyun (Huawei, CN)<br>
-                            <strong>Paradigm Shift and Industrial Opportunities of Computing and Network Convergence</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10:00 AM</td>
-                        <td>Coffee Break</td>
-                    </tr>
-                    <tr>
-                        <td>10:30 AM</td>
-                        <td>Paper Presentation (6 Papers)</td>
-                    </tr>
-                    <tr>
-                        <td>12:00 AM</td>
-                        <td>End</td>
-                    </tr>
+                <table class="program-table" style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="background-color: #bbe0e3; color: black; text-align: center; padding: 10px; font-size: 1.2em; border-bottom: 1px solid #ffffff;">
+                                CNC'25 Workshop Program (Dec 1st, Room 2503)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #e7f3f4;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">14:00-14:10 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Welcoming Remarks</td>
+                        </tr>
+                        
+                        <tr style="background-color: #f3f9fa;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">14:10-14:30 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 1: <strong style="font-size: 1.05em;">6G Mobile Computing Aware Networks: A Deep Fusion of Communication and Computing</strong></td>
+                        </tr>
+
+                        <tr style="background-color: #e7f3f4;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">14:30-14:50 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 2: MPINT: <strong style="font-size: 1.05em;">Lightweight Multipath In-band Network Telemetry via In-Network Deduplication</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #f3f9fa;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">14:50-15:10 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 3: <strong style="font-size: 1.05em;">Computing-Aware Routing Approach for Computing and Network Convergence</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #e7f3f4;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">15:10-15:30 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 4: <strong style="font-size: 1.05em;">A DRL-Based Resource Scheduling for Edge Computing and Network Convergence</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #f3f9fa;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">15:30-15:50 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Coffee Break</td>
+                        </tr>
+                        
+                        <tr style="background-color: #e7f3f4;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">15:50-16:10 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 5: <strong style="font-size: 1.05em;">ERCC: Fine-grained RDMA Congestion Control via Kalman Filter-based Multi-bit ECN Feedback Reconstruction</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #f3f9fa;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">16:10-16:30 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 6: <strong style="font-size: 1.05em;">Sentry: QoE-Aware Failure Handling in Large-Scale Overlay Networks via Spatiotemporal GNNs</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #e7f3f4;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">16:30-16:50 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Pre 7: <strong style="font-size: 1.05em;">Enabling Resource-Aware Distributed Sketch Deployment with Reinforcement Learning</strong></td>
+                        </tr>
+                        
+                        <tr style="background-color: #f3f9fa;">
+                            <td style="width: 20%; padding: 8px 10px; font-weight: bold; color: #333; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff;">16:50-17:00 PM</td>
+                            <td style="padding: 8px 10px; color: #333; border-bottom: 1px solid #ffffff;">Closing Remarks</td>
+                        </tr>
+                    </tbody>
                 </table>
+
+                <h2 id="map">Location</h2> 
+                <p>
+                    <img src="map.png" alt="Workshop Location Map" class="map-image">
+                </p>
             </section>
 
             <!-- Call for Papers Section -->
