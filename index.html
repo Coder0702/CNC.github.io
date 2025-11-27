@@ -7,7 +7,11 @@
     <title>ACM CoNEXT-2025 Workshop on Computing and Network Convergence</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* 全局样式 */
+        /* ========================================= */
+        /* 第一部分：您原本的网站样式           */
+        /* ========================================= */
+
+        /* ...保留您原有的全局样式... */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -206,7 +210,6 @@
             padding-top: 30px;
         }
 
-        /* 内容区域样式 */
         .content-section {
             padding: 80px 0;
             margin-bottom: 40px;
@@ -234,7 +237,7 @@
             line-height: 1.6;
         }
 
-        /* 表格样式 */
+        /* 日程表样式 (您的原始表格样式) */
         .dates-table,
         .program-table {
             width: 100%;
@@ -274,9 +277,9 @@
             max-width: 100%; 
             height: auto; 
             display: block; 
-            margin: 20px auto; /* 居中和上下边距 */
-            border: 1px solid #ddd; /* 可选：添加边框 */
-            border-radius: 5px; /* 可选：圆角 */
+            margin: 20px auto; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
         }
 
         /* 页脚样式 */
@@ -287,11 +290,112 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+
+        /* ========================================= */
+        /* 第二部分：新增 ACM OpenTOC 样式      */
+        /* ========================================= */
+        
+        #DLtoc {
+            font: normal 12px/1.5em Arial, Helvetica, sans-serif;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        #DLheader h1 {
+            font-size:16px;
+            color: #333; 
+        }
+
+        #DLcontent {
+            font-size:12px;
+        }
+        #DLcontent h2 {
+            font-size:14px;
+            margin-bottom:5px;
+        }
+        #DLcontent h3 {
+            font-size:12px;
+            padding-left:20px;
+            margin-bottom:0px;
+            font-weight: bold;
+        }
+        
+        /* 调整链接颜色以匹配您的主题 */
+        #DLcontent a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        #DLcontent a:hover {
+            text-decoration: underline;
+        }
+
+        #DLcontent ul{
+            margin-top:0px;
+            margin-bottom:0px;
+            padding-left: 20px;
+        }
+
+        .DLauthors li{
+            display: inline;
+            list-style-type: none;
+            padding-right: 5px;
+            color: #666;
+        }
+
+        .DLauthors li:after{
+            content:",";
+        }
+        .DLauthors li.nameList.Last:after{
+            content:"";
+        }
+
+        .DLabstract {
+            padding-left:40px;
+            padding-right:20px;
+            display:block;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            color: #444;
+            font-style: italic;
+        }
+
+        .DLformats li{
+            display: inline;
+            list-style-type: none;
+            padding-right: 5px;
+        }
+        .DLformats li:after{
+            content:",";
+        }
+        .DLformats li.formatList.Last:after{
+            content:"";
+        }
+
+        .DLlogo {
+            vertical-align:middle;
+            padding-right:5px;
+            border:none;
+        }
+
+        .DLcitLink {
+            margin-left:20px;
+            font-size: 0.9em;
+        }
+
+        .DLtitleLink {
+            margin-left:20px;
+            font-size: 1.1em;
+        }
+
+        .DLotherLink {
+            margin-left:0px;
+        }
     </style>
 </head>
 
 <body>
-    <!-- 导航栏 -->
     <nav id="main-nav">
         <a href="#" class="logo">CNC</a>
         <button class="nav-toggle" id="nav-toggle">
@@ -306,7 +410,6 @@
         </ul>
     </nav>
 
-    <!-- 头部区域 -->
     <header class="header-container">
         <div class="header-bg"></div>
         <div class="header-overlay"></div>
@@ -319,13 +422,13 @@
         </div>
     </header>
 
-    <!-- 主体内容 -->
     <main>
         <div class="container">
             <section id="home" class="content-section">
                 <h2>Overview</h2>
                 <p>Computing and Network Convergence (CNC) has become a populart topic in the information and communication technology industry in recent years. It aims to achieve convenient and efficient access to computing power by jointly optimizing and scheduling computing and network resources. The implementation of joint optimization and scheduling requires a brand new architecture design, which can provide ubiquitous and guaranteed service level agreements (SLA) in terms of connectivity and computing resource supply. With the development of AI technology, the demand for collaborative utilization of various resources, such as computing and storage, is becoming increasingly urgent. CNC can efficiently coordinate various resources, providing guarantees for AI training and inference businesses in terms of network transmission, computing power scheduling and load balancing, maximizing resource utilization while minimizing energy consumption.</p>
                 <p>This workshop will cover theories, technologies and applications related to CNC, including but not limited to architectures, protocols, platforms, techniques and services. The main research includes CNC scheduling and orchestration, computing and network resource identification, addressing, perception, measurement, and in-network computing. It covers both fixed and cellular wireless networks.</p>
+                
                 <h2>Workshop Program</h2>
                 <table class="program-table" style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
                     <thead>
@@ -388,13 +491,231 @@
                     </tbody>
                 </table>
 
+                <h2>Table of Contents</h2>
+                
+                <div id="DLtoc">
+                     <div id="DLheader">
+                        <h1>CNC '25: Proceedings of the ACM CoNEXT-2025 Workshop on Computing and Network Convergence</h1><a class="DLcitLink" title="Go to the ACM Digital Library for additional information about this proceeding" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/proceedings/10.1145/3769270"><img class="DLlogo" alt="Digital Library logo" height="30" src="https://dl.acm.org/specs/products/acm/releasedAssets/images/footer-logo1.png">
+                           Full Citation in the ACM Digital Library
+                           </a></div>
+                     <div id="DLcontent">
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770119">6G Mobile Computing Aware Networks: A Deep Fusion of Communication and Computing</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Chenghui Peng</li>
+                           <li class="nameList">Qin Li</li>
+                           <li class="nameList">Lu Lu</li>
+                           <li class="nameList">Lu Yang</li>
+                           <li class="nameList">Mingyu Zhao</li>
+                           <li class="nameList">Shaoyun Wu</li>
+                           <li class="nameList">Dan Wang</li>
+                           <li class="nameList">Nanxiang Shi</li>
+                           <li class="nameList">Chuxing Fang</li>
+                           <li class="nameList">Han Xiao</li>
+                           <li class="nameList Last">Changqiao Xu</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>6G networks require seamless integration of communication and computing to ensure
+                                 end-to-end Quality of Service (QoS) for emerging AI-driven applications. However,
+                                 existing architectures like 5G multi-access edge computing (MEC) suffer from decoupled
+                                 resource management, leading to poor QoS under dynamic environments. To address this,
+                                 we propose a 6G Mobile Computing-Aware Network (MCAN) with a built-in computing plane
+                                 that enables real-time coordination between communication and computing resources.
+                                 Key innovations include dual-functional computing executors (CEs) and cross-layer
+                                 fusion protocols (e.g., fusion RRC and NG-AP+). Evaluations demonstrate that MCAN
+                                 reduces average task delay by 62% (from 88ms to 33ms) and task jitter by 99% (from
+                                 573ms to 2.6ms) compared to 5G MEC.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770123">A DRL-Based Resource Scheduling for Edge Computing and Network Convergence</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Zhiwen Yu</li>
+                           <li class="nameList">Deyun Gao</li>
+                           <li class="nameList">Bo Pang</li>
+                           <li class="nameList Last">Maoxue Yan</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>With the advancement of edge computing, computation-intensive tasks are increasingly
+                                 deployed at the network edge. However, existing task assignment frameworks rely solely
+                                 on network information, posing computing node overload or idleness risks, compromising
+                                 resource utilization and service quality. To address this issue, a novel edge computing
+                                 and network convergence (ECNC) resource scheduling mechanism is proposed. Furthermore,
+                                 a multi-head deep Q network (MH-DQN) algorithm is designed to achieve joint optimization
+                                 of computing node selection, routing path decision-making, and bandwidth-computing
+                                 resource allocation in multi-user scenarios. The algorithm employs multi-dimensional
+                                 state modeling and a multi-head action output, minimizing disparities in network and
+                                 computing load while satisfying latency constraints, thereby balancing dynamic load
+                                 within computing and network convergence environments. Experimental results demonstrate
+                                 that the proposed algorithm outperforms baseline methods in key metrics such as average
+                                 reward and task completion rate, validating its effectiveness for intelligent resource
+                                 scheduling.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770122">Computing-Aware Routing Approach for Computing and Network Convergence</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Bo Pang</li>
+                           <li class="nameList">Deyun Gao</li>
+                           <li class="nameList">Zhiwen Yu</li>
+                           <li class="nameList Last">Maoxue Yan</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>Compute-network convergence (CNC) demands joint optimization of heterogeneous resources,
+                                 yet existing anycast routing ignores dynamic compute loads. We propose a CNC routing
+                                 framework featuring: (i) dual-table forwarding that maintains flow affinity while
+                                 distributing load across compute instances, (ii) lightweight telemetry collecting
+                                 both network and compute metrics without protocol modifications, and (iii) a two-stage
+                                 routing algorithm combining load-aware path enumeration with projected gradient descent.
+                                 Evaluations on 200-1800 node topologies show 25% latency reduction, 27% utilization
+                                 improvement, and 4.3× faster convergence versus baselines. Our approach seamlessly
+                                 integrates with existing IP infrastructure, enabling incremental deployment for latency-sensitive
+                                 services.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770744">Enabling Resource-Aware Distributed Sketch Deployment with Reinforcement Learning</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Qi Zhan</li>
+                           <li class="nameList">Yongji Dong</li>
+                           <li class="nameList">Le Tian</li>
+                           <li class="nameList">Yuxiang Hu</li>
+                           <li class="nameList">Jiqiang Xia</li>
+                           <li class="nameList">Yufei Zhu</li>
+                           <li class="nameList">Zihao Wang</li>
+                           <li class="nameList">Xiaobo Guo</li>
+                           <li class="nameList Last">Hao Li</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>The conflict between static network resource allocation frameworks and exponentially
+                                 increasing computational workloads has made Computing and Network Convergence (CNC)
+                                 a hot topic. By integrating computing resources and networks, CNC could orchestrate
+                                 computing resources globally, thus effectively improving the performance and efficiency.
+                                 To achieve efficient network-aware and traffic telemetry in CNC scenario, sketch is
+                                 introduced to detect and measure network flow in real-time. However, existing solutions
+                                 typically adopt centralized deployment strategy, which inevitably imposes significant
+                                 resource occupation in specific switches. To address the coarse-grained sketch segmenting
+                                 problem in distributed sketch deployment, we propose DiSketch, an intelligent deployment
+                                 agent trained with reinforcement learning algorithm. Experiments show that, DiSketch
+                                 can effectively decrease the maximum resource utilization by 9.3%, standard deviation
+                                 of resource utiliazation by 4.16% and achieve an effective packet measurement load
+                                 balancing.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770124">ERCC: Fine-grained RDMA Congestion Control via Kalman Filter-based Multi-bit ECN Feedback
+                              Reconstruction</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Zhiguo Xu</li>
+                           <li class="nameList">Qingqiang Yi</li>
+                           <li class="nameList">Lingkun Meng</li>
+                           <li class="nameList">Shengju Zhang</li>
+                           <li class="nameList">Jilei Chen</li>
+                           <li class="nameList">Xinghua Zhao</li>
+                           <li class="nameList">Yunxiang Tao</li>
+                           <li class="nameList">Jun Xu</li>
+                           <li class="nameList">Qian Xue</li>
+                           <li class="nameList">Zhongming Ji</li>
+                           <li class="nameList">Shucheng Wang</li>
+                           <li class="nameList Last">Tian Pan</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>With the large-scale deployment of RDMA technology in data center networks, the DCQCN
+                                 algorithm has gradually become the mainstream for RDMA congestion control. However,
+                                 due to issues such as coarse granularity in congestion detection, reliance on preset
+                                 heuristic rules for rate adjustment, and complex parameter tuning, DCQCN exhibits
+                                 significant performance bottlenecks in large-scale RDMA networks where high-performance
+                                 distributed applications are widely deployed. To address this, this paper proposes
+                                 ERCC. Based on easily accessible ECN signals, ERCC reconstructs the single-bit ECN
+                                 marking information sequence into multi-bit precisely quantized congestion information
+                                 through Kalman filtering. Furthermore, combined with a PID controller, it achieves
+                                 low network overhead and high-precision congestion control. We have implemented ERCC
+                                 on Yunsilicon’s FPGA RNIC without any modifications to the switches. Hardware testbed
+                                 experiments indicate that, compared to DCQCN, ERCC can improve bandwidth utilization
+                                 by 8.51% and effectively ensure fairness both within and between senders. Large-scale
+                                 NS3 simulation shows that, compared to DCQCN, ERCC can reduce FCT by up to 48%, with
+                                 particularly significant effects when handling long flows. Meanwhile, it can quickly
+                                 converge to the available bandwidth while maintaining low buffer queue occupancy,
+                                 achieving performance comparable to HPCC.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770120">MPINT: Lightweight Multipath In-band Network Telemetry via In-Network Deduplication</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Yan Zheng</li>
+                           <li class="nameList">Tian Pan</li>
+                           <li class="nameList">Yan Zhang</li>
+                           <li class="nameList">Jun Yao</li>
+                           <li class="nameList">Jiang Liu</li>
+                           <li class="nameList Last">Tao Huang</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>Multicast traffic monitoring is crucial for bandwidth-intensive applications like
+                                 live streaming and IPTV, where efficient one-to-many delivery directly impacts service
+                                 quality and operational costs. In-band Network Telemetry (INT) delivers real-time,
+                                 fine-grained monitoring but fails in multicast environments due to telemetry data
+                                 redundancy and duplicated data uploads. To address these limitations, we propose MPINT
+                                 (Multi-Path In-band Network Telemetry), a multicast-optimized framework leveraging
+                                 in-network computing for telemetry data deduplication. MPINT fundamentally eliminates
+                                 in-flight telemetry data replication during packet forwarding, conserving network
+                                 bandwidth while suppressing duplicate data upload. Evaluation results demonstrate
+                                 &gt;80% INT overhead reduction and 50% less uploaded bytes versus conventional multicast
+                                 INT in the same test topologies, achieved through MPINT’s in-network processing. Complementing
+                                 the MPINT framework, we implement an analytical infrastructure integrating Redis-optimized
+                                 telemetry data storage, multicast tree reconstruction via compressed path signatures,
+                                 and probabilistic packet loss diagnosis—collectively enabling comprehensive multicast
+                                 state analytics.</p>
+                           </div>
+                        </div>
+                        
+                        <h3><a class="DLtitleLink" title="Full Citation in the ACM Digital Library" referrerpolicy="no-referrer-when-downgrade" href="https://dl.acm.org/doi/10.1145/3769270.3770125">Sentry: QoE-Aware Failure Handling in Large-Scale Overlay Networks via Spatiotemporal
+                              GNNs</a></h3>
+                        <ul class="DLauthors">
+                           <li class="nameList">Xingxing Yang</li>
+                           <li class="nameList">Bo Wang</li>
+                           <li class="nameList">Wufan Wang</li>
+                           <li class="nameList">Yixin Shen</li>
+                           <li class="nameList">Minhu Wang</li>
+                           <li class="nameList">Wangqiu You</li>
+                           <li class="nameList">Linhui Lou</li>
+                           <li class="nameList">Pei Xu</li>
+                           <li class="nameList">Lihang Gao</li>
+                           <li class="nameList">Zongzhi Hou</li>
+                           <li class="nameList Last">Mingwei Xu</li>
+                        </ul>
+                        <div class="DLabstract">
+                           <div style="display:inline">
+                              <p>With the widespread deployment of large-scale overlay networks, transmission failures
+                                 among edge servers occur frequently, severely impacting service availability and Quality
+                                 of Experience (QoE). Existing failure handling solutions struggle to effectively address
+                                 such scenarios. Accordingly, we propose Sentry, a QoE-aware failure handling method
+                                 based on spatiotemporal graph neural networks. Instead of relying on precise localization
+                                 of specific faults or root causes, Sentry directly identifies and offlines a set of
+                                 edge servers related to failures to ensure service level objective (SLO) while minimizing
+                                 QoE degradation. Sentry constructs a state graph based on real relay streams, combining
+                                 temporal modeling and graph neural networks to effectively filter out short-term network
+                                 fluctuations and transform the complex combinatorial optimization problem into an
+                                 efficient node-level prediction task. The experimental results show that Sentry outperforms
+                                 existing solutions in both success rate and cost of failure handling, demonstrating
+                                 strong overall performance and deployment potential.</p>
+                           </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
                 <h2 id="map">Location</h2> 
                 <p>
                     <img src="map.png" alt="Workshop Location Map" class="map-image">
                 </p>
             </section>
 
-            <!-- Call for Papers Section -->
             <section id="cfp" class="content-section">
                 <h2>Call for Papers</h2>
                 <p>The deep convergence of computing and network resources has become a key engine driving the development of future technologies, such as artificial intelligence, big data, and cloud computing. To explore the cutting-edge technologies, innovative applications, and future trends in the field of computing and network convergence (CNC), we sincerely invite you to attend CNC workshop. We are also soliciting high-quality papers and practical cases globally.</p>
@@ -455,7 +776,6 @@
                 </table>
             </section>
 
-            <!-- Organizers Section -->
             <section id="organizers" class="content-section">
                 <h2>WorkShop Chairs</h2>
                 <ul>
